@@ -17,10 +17,11 @@ I have taken :
    
 // relations 
 
+# a patient can have multiple appointments
 patient.patient_id < appointments.patient_id [1 : Many]
 
 
-// a doctor can have many specializations 
+# a doctor can have many specializations 
 doctors.doctor_id < doctorspecializations.doctor_id  [1 : Many]
 
 
@@ -28,13 +29,13 @@ doctors.doctor_id < doctorspecializations.doctor_id  [1 : Many]
 tests.appointment_id > consultation.appointment_id [Many : one]
 
 
-// multiple reports for a single patient
+# multiple reports for a single patient
 reports.patient_id > patient.patient_id   [Many : one]
 
 
-// one doctor can have different appointments
+# one doctor can have different appointments
 doctors.doctor_id  < appointments.doctor_id   [1 : Many]
 
 
-// one specific test result in sepcific report
+# one specific test result in sepcific report
 tests.test_id  - reports.test_id  [1 : one]
