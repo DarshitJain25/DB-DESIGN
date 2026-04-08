@@ -4,7 +4,8 @@
 I have completed the task of designing the db scheme for a Clinic Appointment and Diagnostics Platform
 
 I have taken : 
-// Tables 
+
+## Tables
 
 1. patient
 2. doctors
@@ -15,27 +16,27 @@ I have taken :
 7. tests
 
    
-// relations 
+## Relations
 
-# a patient can have multiple appointments
+### a patient can have multiple appointments
 patient.patient_id < appointments.patient_id [1 : Many]
 
 
-# a doctor can have many specializations 
+### a doctor can have many specializations 
 doctors.doctor_id < doctorspecializations.doctor_id  [1 : Many]
 
 
-// multiple tests for single consultation 
+### multiple tests for single consultation 
 tests.appointment_id > consultation.appointment_id [Many : one]
 
 
-# multiple reports for a single patient
+### multiple reports for a single patient
 reports.patient_id > patient.patient_id   [Many : one]
 
 
-# one doctor can have different appointments
+### one doctor can have different appointments
 doctors.doctor_id  < appointments.doctor_id   [1 : Many]
 
 
-# one report corresponding to one test
+### one report corresponding to one test
 tests.test_id  - reports.test_id  [1 : one]
