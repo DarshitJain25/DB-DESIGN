@@ -37,5 +37,5 @@ reports.patient_id > patient.patient_id   [Many : one]
 doctors.doctor_id  < appointments.doctor_id   [1 : Many]
 
 
-# one specific test result in sepcific report
+# one report corresponding to one test
 tests.test_id  - reports.test_id  [1 : one]
